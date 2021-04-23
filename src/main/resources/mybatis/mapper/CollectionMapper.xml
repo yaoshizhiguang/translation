@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.springboot.translation.mapper.CollectionMapper">
+  <resultMap id="BaseResultMap" type="com.demo.springboot.translation.common.domain.Collection">
+    <id column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="cuid" jdbcType="INTEGER" property="cuid" />
+    <result column="time" jdbcType="DATE" property="time" />
+    <result column="langguage" jdbcType="INTEGER" property="langguage" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.demo.springboot.translation.common.domain.CollectionWithBLOBs">
+    <result column="origintext" jdbcType="LONGVARCHAR" property="origintext" />
+    <result column="resulttext" jdbcType="LONGVARCHAR" property="resulttext" />
+    <result column="cname" jdbcType="LONGVARCHAR" property="cname" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    cid, uid, cuid, time, langguage
+  </sql>
+  <sql id="Blob_Column_List">
+    origintext, resulttext, cname
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.CollectionExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from collection
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.demo.springboot.translation.common.domain.CollectionExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from collection
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from collection
+    where cid = #{cid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from collection
+    where cid = #{cid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.demo.springboot.translation.common.domain.CollectionExample">
+    delete from collection
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.demo.springboot.translation.common.domain.CollectionWithBLOBs">
+    insert into collection (cid, uid, cuid, 
+      time, langguage, origintext, 
+      resulttext, cname)
+    values (#{cid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{cuid,jdbcType=INTEGER}, 
+      #{time,jdbcType=DATE}, #{langguage,jdbcType=INTEGER}, #{origintext,jdbcType=LONGVARCHAR}, 
+      #{resulttext,jdbcType=LONGVARCHAR}, #{cname,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.springboot.translation.common.domain.CollectionWithBLOBs">
+    insert into collection
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="cuid != null">
+        cuid,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+      <if test="langguage != null">
+        langguage,
+      </if>
+      <if test="origintext != null">
+        origintext,
+      </if>
+      <if test="resulttext != null">
+        resulttext,
+      </if>
+      <if test="cname != null">
+        cname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cid != null">
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="cuid != null">
+        #{cuid,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=DATE},
+      </if>
+      <if test="langguage != null">
+        #{langguage,jdbcType=INTEGER},
+      </if>
+      <if test="origintext != null">
+        #{origintext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="resulttext != null">
+        #{resulttext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="cname != null">
+        #{cname,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.demo.springboot.translation.common.domain.CollectionExample" resultType="java.lang.Long">
+    select count(*) from collection
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update collection
+    <set>
+      <if test="record.cid != null">
+        cid = #{record.cid,jdbcType=INTEGER},
+      </if>
+      <if test="record.uid != null">
+        uid = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.cuid != null">
+        cuid = #{record.cuid,jdbcType=INTEGER},
+      </if>
+      <if test="record.time != null">
+        time = #{record.time,jdbcType=DATE},
+      </if>
+      <if test="record.langguage != null">
+        langguage = #{record.langguage,jdbcType=INTEGER},
+      </if>
+      <if test="record.origintext != null">
+        origintext = #{record.origintext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.resulttext != null">
+        resulttext = #{record.resulttext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.cname != null">
+        cname = #{record.cname,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update collection
+    set cid = #{record.cid,jdbcType=INTEGER},
+      uid = #{record.uid,jdbcType=INTEGER},
+      cuid = #{record.cuid,jdbcType=INTEGER},
+      time = #{record.time,jdbcType=DATE},
+      langguage = #{record.langguage,jdbcType=INTEGER},
+      origintext = #{record.origintext,jdbcType=LONGVARCHAR},
+      resulttext = #{record.resulttext,jdbcType=LONGVARCHAR},
+      cname = #{record.cname,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update collection
+    set cid = #{record.cid,jdbcType=INTEGER},
+      uid = #{record.uid,jdbcType=INTEGER},
+      cuid = #{record.cuid,jdbcType=INTEGER},
+      time = #{record.time,jdbcType=DATE},
+      langguage = #{record.langguage,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.springboot.translation.common.domain.CollectionWithBLOBs">
+    update collection
+    <set>
+      <if test="uid != null">
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="cuid != null">
+        cuid = #{cuid,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=DATE},
+      </if>
+      <if test="langguage != null">
+        langguage = #{langguage,jdbcType=INTEGER},
+      </if>
+      <if test="origintext != null">
+        origintext = #{origintext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="resulttext != null">
+        resulttext = #{resulttext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="cname != null">
+        cname = #{cname,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.CollectionWithBLOBs">
+    update collection
+    set uid = #{uid,jdbcType=INTEGER},
+      cuid = #{cuid,jdbcType=INTEGER},
+      time = #{time,jdbcType=DATE},
+      langguage = #{langguage,jdbcType=INTEGER},
+      origintext = #{origintext,jdbcType=LONGVARCHAR},
+      resulttext = #{resulttext,jdbcType=LONGVARCHAR},
+      cname = #{cname,jdbcType=LONGVARCHAR}
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.springboot.translation.common.domain.Collection">
+    update collection
+    set uid = #{uid,jdbcType=INTEGER},
+      cuid = #{cuid,jdbcType=INTEGER},
+      time = #{time,jdbcType=DATE},
+      langguage = #{langguage,jdbcType=INTEGER}
+    where cid = #{cid,jdbcType=INTEGER}
+  </update>
+</mapper>

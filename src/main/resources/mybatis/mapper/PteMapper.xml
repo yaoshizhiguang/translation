@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.springboot.translation.mapper.PteMapper">
+  <resultMap id="BaseResultMap" type="com.demo.springboot.translation.common.domain.Pte">
+    <id column="pteid" jdbcType="INTEGER" property="pteid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.demo.springboot.translation.common.domain.Pte">
+    <result column="ptext" jdbcType="LONGVARCHAR" property="ptext" />
+    <result column="etext" jdbcType="LONGVARCHAR" property="etext" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    pteid
+  </sql>
+  <sql id="Blob_Column_List">
+    ptext, etext
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.PteExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from pte
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.demo.springboot.translation.common.domain.PteExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from pte
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from pte
+    where pteid = #{pteid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from pte
+    where pteid = #{pteid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.demo.springboot.translation.common.domain.PteExample">
+    delete from pte
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.demo.springboot.translation.common.domain.Pte">
+    insert into pte (pteid, ptext, etext
+      )
+    values (#{pteid,jdbcType=INTEGER}, #{ptext,jdbcType=LONGVARCHAR}, #{etext,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.springboot.translation.common.domain.Pte">
+    insert into pte
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="pteid != null">
+        pteid,
+      </if>
+      <if test="ptext != null">
+        ptext,
+      </if>
+      <if test="etext != null">
+        etext,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="pteid != null">
+        #{pteid,jdbcType=INTEGER},
+      </if>
+      <if test="ptext != null">
+        #{ptext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="etext != null">
+        #{etext,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.demo.springboot.translation.common.domain.PteExample" resultType="java.lang.Long">
+    select count(*) from pte
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update pte
+    <set>
+      <if test="record.pteid != null">
+        pteid = #{record.pteid,jdbcType=INTEGER},
+      </if>
+      <if test="record.ptext != null">
+        ptext = #{record.ptext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.etext != null">
+        etext = #{record.etext,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update pte
+    set pteid = #{record.pteid,jdbcType=INTEGER},
+      ptext = #{record.ptext,jdbcType=LONGVARCHAR},
+      etext = #{record.etext,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update pte
+    set pteid = #{record.pteid,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.springboot.translation.common.domain.Pte">
+    update pte
+    <set>
+      <if test="ptext != null">
+        ptext = #{ptext,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="etext != null">
+        etext = #{etext,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where pteid = #{pteid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.Pte">
+    update pte
+    set ptext = #{ptext,jdbcType=LONGVARCHAR},
+      etext = #{etext,jdbcType=LONGVARCHAR}
+    where pteid = #{pteid,jdbcType=INTEGER}
+  </update>
+</mapper>
