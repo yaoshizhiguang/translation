@@ -3,9 +3,9 @@ package com.demo.springboot.translation.common.domain;
 public class Pte {
     private Integer pteid;
 
-    private String ptext;
+    private String pword;
 
-    private String etext;
+    private String eword;
 
     public Integer getPteid() {
         return pteid;
@@ -15,19 +15,19 @@ public class Pte {
         this.pteid = pteid;
     }
 
-    public String getPtext() {
-        return ptext;
+    public String getPword() {
+        return pword;
     }
 
-    public void setPtext(String ptext) {
-        this.ptext = ptext == null ? null : ptext.trim();
+    public void setPword(String pword) {
+        this.pword = pword == null ? null : pword.trim();
     }
 
-    public String getEtext() {
-        return etext;
+    public String getEword() {
+        return eword;
     }
 
-    public void setEtext(String etext) {
-        this.etext = etext == null ? null : etext.trim();
+    public void setEword(String eword) {
+        this.eword = eword == null ? null : eword.trim();
     }
 }

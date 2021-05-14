@@ -1,33 +1,33 @@
 package com.demo.springboot.translation.common.domain;
 
 public class Cte {
-    private Integer cteid;
+    private Integer cteId;
 
-    private String cword;
+    private String cWord;
 
-    private String eword;
+    private String eWord;
 
-    public Integer getCteid() {
-        return cteid;
+    public Integer getCteId() {
+        return cteId;
     }
 
-    public void setCteid(Integer cteid) {
-        this.cteid = cteid;
+    public void setCteId(Integer cteId) {
+        this.cteId = cteId;
     }
 
-    public String getCword() {
-        return cword;
+    public String getcWord() {
+        return cWord;
     }
 
-    public void setCword(String cword) {
-        this.cword = cword == null ? null : cword.trim();
+    public void setcWord(String cWord) {
+        this.cWord = cWord == null ? null : cWord.trim();
     }
 
-    public String getEword() {
-        return eword;
+    public String geteWord() {
+        return eWord;
     }
 
-    public void setEword(String eword) {
-        this.eword = eword == null ? null : eword.trim();
+    public void seteWord(String eWord) {
+        this.eWord = eWord == null ? null : eWord.trim();
     }
 }

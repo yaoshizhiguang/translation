@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.springboot.translation.mapper.PteMapper">
   <resultMap id="BaseResultMap" type="com.demo.springboot.translation.common.domain.Pte">
-    <id column="pteid" jdbcType="INTEGER" property="pteid" />
+    <id column="pteId" jdbcType="INTEGER" property="pteid" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.demo.springboot.translation.common.domain.Pte">
-    <result column="ptext" jdbcType="LONGVARCHAR" property="ptext" />
-    <result column="etext" jdbcType="LONGVARCHAR" property="etext" />
+    <result column="pWord" jdbcType="LONGVARCHAR" property="pword" />
+    <result column="eWord" jdbcType="LONGVARCHAR" property="eword" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,10 +67,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    pteid
+    pteId
   </sql>
   <sql id="Blob_Column_List">
-    ptext, etext
+    pWord, eWord
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.PteExample" resultMap="ResultMapWithBLOBs">
     select
@@ -108,11 +108,11 @@
     ,
     <include refid="Blob_Column_List" />
     from pte
-    where pteid = #{pteid,jdbcType=INTEGER}
+    where pteId = #{pteid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from pte
-    where pteid = #{pteid,jdbcType=INTEGER}
+    where pteId = #{pteid,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.demo.springboot.translation.common.domain.PteExample">
     delete from pte
@@ -121,33 +121,33 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.demo.springboot.translation.common.domain.Pte">
-    insert into pte (pteid, ptext, etext
+    insert into pte (pteId, pWord, eWord
       )
-    values (#{pteid,jdbcType=INTEGER}, #{ptext,jdbcType=LONGVARCHAR}, #{etext,jdbcType=LONGVARCHAR}
+    values (#{pteid,jdbcType=INTEGER}, #{pword,jdbcType=LONGVARCHAR}, #{eword,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.demo.springboot.translation.common.domain.Pte">
     insert into pte
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="pteid != null">
-        pteid,
+        pteId,
       </if>
-      <if test="ptext != null">
-        ptext,
+      <if test="pword != null">
+        pWord,
       </if>
-      <if test="etext != null">
-        etext,
+      <if test="eword != null">
+        eWord,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="pteid != null">
         #{pteid,jdbcType=INTEGER},
       </if>
-      <if test="ptext != null">
-        #{ptext,jdbcType=LONGVARCHAR},
+      <if test="pword != null">
+        #{pword,jdbcType=LONGVARCHAR},
       </if>
-      <if test="etext != null">
-        #{etext,jdbcType=LONGVARCHAR},
+      <if test="eword != null">
+        #{eword,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -161,13 +161,13 @@
     update pte
     <set>
       <if test="record.pteid != null">
-        pteid = #{record.pteid,jdbcType=INTEGER},
+        pteId = #{record.pteid,jdbcType=INTEGER},
       </if>
-      <if test="record.ptext != null">
-        ptext = #{record.ptext,jdbcType=LONGVARCHAR},
+      <if test="record.pword != null">
+        pWord = #{record.pword,jdbcType=LONGVARCHAR},
       </if>
-      <if test="record.etext != null">
-        etext = #{record.etext,jdbcType=LONGVARCHAR},
+      <if test="record.eword != null">
+        eWord = #{record.eword,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -176,16 +176,16 @@
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update pte
-    set pteid = #{record.pteid,jdbcType=INTEGER},
-      ptext = #{record.ptext,jdbcType=LONGVARCHAR},
-      etext = #{record.etext,jdbcType=LONGVARCHAR}
+    set pteId = #{record.pteid,jdbcType=INTEGER},
+      pWord = #{record.pword,jdbcType=LONGVARCHAR},
+      eWord = #{record.eword,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update pte
-    set pteid = #{record.pteid,jdbcType=INTEGER}
+    set pteId = #{record.pteid,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -193,19 +193,19 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.demo.springboot.translation.common.domain.Pte">
     update pte
     <set>
-      <if test="ptext != null">
-        ptext = #{ptext,jdbcType=LONGVARCHAR},
+      <if test="pword != null">
+        pWord = #{pword,jdbcType=LONGVARCHAR},
       </if>
-      <if test="etext != null">
-        etext = #{etext,jdbcType=LONGVARCHAR},
+      <if test="eword != null">
+        eWord = #{eword,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    where pteid = #{pteid,jdbcType=INTEGER}
+    where pteId = #{pteid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.Pte">
     update pte
-    set ptext = #{ptext,jdbcType=LONGVARCHAR},
-      etext = #{etext,jdbcType=LONGVARCHAR}
-    where pteid = #{pteid,jdbcType=INTEGER}
+    set pWord = #{pword,jdbcType=LONGVARCHAR},
+      eWord = #{eword,jdbcType=LONGVARCHAR}
+    where pteId = #{pteid,jdbcType=INTEGER}
   </update>
 </mapper>

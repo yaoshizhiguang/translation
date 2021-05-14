@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.springboot.translation.mapper.UserMapper">
   <resultMap id="BaseResultMap" type="com.demo.springboot.translation.common.domain.User">
-    <id column="uid" jdbcType="INTEGER" property="uid" />
+    <id column="uId" jdbcType="INTEGER" property="uid" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.demo.springboot.translation.common.domain.User">
     <result column="pass" jdbcType="LONGVARCHAR" property="pass" />
@@ -66,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    uid
+    uId
   </sql>
   <sql id="Blob_Column_List">
     pass
@@ -107,11 +107,11 @@
     ,
     <include refid="Blob_Column_List" />
     from user
-    where uid = #{uid,jdbcType=INTEGER}
+    where uId = #{uid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user
-    where uid = #{uid,jdbcType=INTEGER}
+    where uId = #{uid,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.demo.springboot.translation.common.domain.UserExample">
     delete from user
@@ -120,14 +120,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.demo.springboot.translation.common.domain.User">
-    insert into user (uid, pass)
+    insert into user (uId, pass)
     values (#{uid,jdbcType=INTEGER}, #{pass,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.demo.springboot.translation.common.domain.User">
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="uid != null">
-        uid,
+        uId,
       </if>
       <if test="pass != null">
         pass,
@@ -152,7 +152,7 @@
     update user
     <set>
       <if test="record.uid != null">
-        uid = #{record.uid,jdbcType=INTEGER},
+        uId = #{record.uid,jdbcType=INTEGER},
       </if>
       <if test="record.pass != null">
         pass = #{record.pass,jdbcType=LONGVARCHAR},
@@ -164,7 +164,7 @@
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update user
-    set uid = #{record.uid,jdbcType=INTEGER},
+    set uId = #{record.uid,jdbcType=INTEGER},
       pass = #{record.pass,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -172,7 +172,7 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update user
-    set uid = #{record.uid,jdbcType=INTEGER}
+    set uId = #{record.uid,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -184,11 +184,11 @@
         pass = #{pass,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    where uid = #{uid,jdbcType=INTEGER}
+    where uId = #{uid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.User">
     update user
     set pass = #{pass,jdbcType=LONGVARCHAR}
-    where uid = #{uid,jdbcType=INTEGER}
+    where uId = #{uid,jdbcType=INTEGER}
   </update>
 </mapper>

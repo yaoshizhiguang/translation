@@ -5,13 +5,11 @@ import java.util.Date;
 public class Collection {
     private Integer cid;
 
-    private Integer uid;
-
     private Integer cuid;
 
     private Date time;
 
-    private Integer langguage;
+    private Integer language;
 
     public Integer getCid() {
         return cid;
@@ -19,14 +17,6 @@ public class Collection {
 
     public void setCid(Integer cid) {
         this.cid = cid;
-    }
-
-    public Integer getUid() {
-        return uid;
-    }
-
-    public void setUid(Integer uid) {
-        this.uid = uid;
     }
 
     public Integer getCuid() {
@@ -45,11 +35,11 @@ public class Collection {
         this.time = time;
     }
 
-    public Integer getLangguage() {
-        return langguage;
+    public Integer getLanguage() {
+        return language;
     }
 
-    public void setLangguage(Integer langguage) {
-        this.langguage = langguage;
+    public void setLanguage(Integer language) {
+        this.language = language;
     }
 }

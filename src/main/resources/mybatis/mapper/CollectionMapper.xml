@@ -2,16 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.springboot.translation.mapper.CollectionMapper">
   <resultMap id="BaseResultMap" type="com.demo.springboot.translation.common.domain.Collection">
-    <id column="cid" jdbcType="INTEGER" property="cid" />
-    <result column="uid" jdbcType="INTEGER" property="uid" />
-    <result column="cuid" jdbcType="INTEGER" property="cuid" />
+    <id column="cId" jdbcType="INTEGER" property="cid" />
+    <result column="cUid" jdbcType="INTEGER" property="cuid" />
     <result column="time" jdbcType="DATE" property="time" />
-    <result column="langguage" jdbcType="INTEGER" property="langguage" />
+    <result column="language" jdbcType="INTEGER" property="language" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.demo.springboot.translation.common.domain.CollectionWithBLOBs">
-    <result column="origintext" jdbcType="LONGVARCHAR" property="origintext" />
-    <result column="resulttext" jdbcType="LONGVARCHAR" property="resulttext" />
-    <result column="cname" jdbcType="LONGVARCHAR" property="cname" />
+    <result column="origin_text" jdbcType="LONGVARCHAR" property="originText" />
+    <result column="result_text" jdbcType="LONGVARCHAR" property="resultText" />
+    <result column="cName" jdbcType="LONGVARCHAR" property="cname" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,10 +71,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    cid, uid, cuid, time, langguage
+    cId, cUid, time, language
   </sql>
   <sql id="Blob_Column_List">
-    origintext, resulttext, cname
+    origin_text, result_text, cName
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.CollectionExample" resultMap="ResultMapWithBLOBs">
     select
@@ -113,11 +112,11 @@
     ,
     <include refid="Blob_Column_List" />
     from collection
-    where cid = #{cid,jdbcType=INTEGER}
+    where cId = #{cid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from collection
-    where cid = #{cid,jdbcType=INTEGER}
+    where cId = #{cid,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.demo.springboot.translation.common.domain.CollectionExample">
     delete from collection
@@ -126,47 +125,41 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.demo.springboot.translation.common.domain.CollectionWithBLOBs">
-    insert into collection (cid, uid, cuid, 
-      time, langguage, origintext, 
-      resulttext, cname)
-    values (#{cid,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{cuid,jdbcType=INTEGER}, 
-      #{time,jdbcType=DATE}, #{langguage,jdbcType=INTEGER}, #{origintext,jdbcType=LONGVARCHAR}, 
-      #{resulttext,jdbcType=LONGVARCHAR}, #{cname,jdbcType=LONGVARCHAR})
+    insert into collection (cId, cUid, time, 
+      language, origin_text, result_text, 
+      cName)
+    values (#{cid,jdbcType=INTEGER}, #{cuid,jdbcType=INTEGER}, #{time,jdbcType=DATE}, 
+      #{language,jdbcType=INTEGER}, #{originText,jdbcType=LONGVARCHAR}, #{resultText,jdbcType=LONGVARCHAR}, 
+      #{cname,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.demo.springboot.translation.common.domain.CollectionWithBLOBs">
     insert into collection
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="cid != null">
-        cid,
-      </if>
-      <if test="uid != null">
-        uid,
+        cId,
       </if>
       <if test="cuid != null">
-        cuid,
+        cUid,
       </if>
       <if test="time != null">
         time,
       </if>
-      <if test="langguage != null">
-        langguage,
+      <if test="language != null">
+        language,
       </if>
-      <if test="origintext != null">
-        origintext,
+      <if test="originText != null">
+        origin_text,
       </if>
-      <if test="resulttext != null">
-        resulttext,
+      <if test="resultText != null">
+        result_text,
       </if>
       <if test="cname != null">
-        cname,
+        cName,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="cid != null">
         #{cid,jdbcType=INTEGER},
-      </if>
-      <if test="uid != null">
-        #{uid,jdbcType=INTEGER},
       </if>
       <if test="cuid != null">
         #{cuid,jdbcType=INTEGER},
@@ -174,14 +167,14 @@
       <if test="time != null">
         #{time,jdbcType=DATE},
       </if>
-      <if test="langguage != null">
-        #{langguage,jdbcType=INTEGER},
+      <if test="language != null">
+        #{language,jdbcType=INTEGER},
       </if>
-      <if test="origintext != null">
-        #{origintext,jdbcType=LONGVARCHAR},
+      <if test="originText != null">
+        #{originText,jdbcType=LONGVARCHAR},
       </if>
-      <if test="resulttext != null">
-        #{resulttext,jdbcType=LONGVARCHAR},
+      <if test="resultText != null">
+        #{resultText,jdbcType=LONGVARCHAR},
       </if>
       <if test="cname != null">
         #{cname,jdbcType=LONGVARCHAR},
@@ -198,28 +191,25 @@
     update collection
     <set>
       <if test="record.cid != null">
-        cid = #{record.cid,jdbcType=INTEGER},
-      </if>
-      <if test="record.uid != null">
-        uid = #{record.uid,jdbcType=INTEGER},
+        cId = #{record.cid,jdbcType=INTEGER},
       </if>
       <if test="record.cuid != null">
-        cuid = #{record.cuid,jdbcType=INTEGER},
+        cUid = #{record.cuid,jdbcType=INTEGER},
       </if>
       <if test="record.time != null">
         time = #{record.time,jdbcType=DATE},
       </if>
-      <if test="record.langguage != null">
-        langguage = #{record.langguage,jdbcType=INTEGER},
+      <if test="record.language != null">
+        language = #{record.language,jdbcType=INTEGER},
       </if>
-      <if test="record.origintext != null">
-        origintext = #{record.origintext,jdbcType=LONGVARCHAR},
+      <if test="record.originText != null">
+        origin_text = #{record.originText,jdbcType=LONGVARCHAR},
       </if>
-      <if test="record.resulttext != null">
-        resulttext = #{record.resulttext,jdbcType=LONGVARCHAR},
+      <if test="record.resultText != null">
+        result_text = #{record.resultText,jdbcType=LONGVARCHAR},
       </if>
       <if test="record.cname != null">
-        cname = #{record.cname,jdbcType=LONGVARCHAR},
+        cName = #{record.cname,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -228,25 +218,23 @@
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update collection
-    set cid = #{record.cid,jdbcType=INTEGER},
-      uid = #{record.uid,jdbcType=INTEGER},
-      cuid = #{record.cuid,jdbcType=INTEGER},
+    set cId = #{record.cid,jdbcType=INTEGER},
+      cUid = #{record.cuid,jdbcType=INTEGER},
       time = #{record.time,jdbcType=DATE},
-      langguage = #{record.langguage,jdbcType=INTEGER},
-      origintext = #{record.origintext,jdbcType=LONGVARCHAR},
-      resulttext = #{record.resulttext,jdbcType=LONGVARCHAR},
-      cname = #{record.cname,jdbcType=LONGVARCHAR}
+      language = #{record.language,jdbcType=INTEGER},
+      origin_text = #{record.originText,jdbcType=LONGVARCHAR},
+      result_text = #{record.resultText,jdbcType=LONGVARCHAR},
+      cName = #{record.cname,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update collection
-    set cid = #{record.cid,jdbcType=INTEGER},
-      uid = #{record.uid,jdbcType=INTEGER},
-      cuid = #{record.cuid,jdbcType=INTEGER},
+    set cId = #{record.cid,jdbcType=INTEGER},
+      cUid = #{record.cuid,jdbcType=INTEGER},
       time = #{record.time,jdbcType=DATE},
-      langguage = #{record.langguage,jdbcType=INTEGER}
+      language = #{record.language,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -254,47 +242,42 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.demo.springboot.translation.common.domain.CollectionWithBLOBs">
     update collection
     <set>
-      <if test="uid != null">
-        uid = #{uid,jdbcType=INTEGER},
-      </if>
       <if test="cuid != null">
-        cuid = #{cuid,jdbcType=INTEGER},
+        cUid = #{cuid,jdbcType=INTEGER},
       </if>
       <if test="time != null">
         time = #{time,jdbcType=DATE},
       </if>
-      <if test="langguage != null">
-        langguage = #{langguage,jdbcType=INTEGER},
+      <if test="language != null">
+        language = #{language,jdbcType=INTEGER},
       </if>
-      <if test="origintext != null">
-        origintext = #{origintext,jdbcType=LONGVARCHAR},
+      <if test="originText != null">
+        origin_text = #{originText,jdbcType=LONGVARCHAR},
       </if>
-      <if test="resulttext != null">
-        resulttext = #{resulttext,jdbcType=LONGVARCHAR},
+      <if test="resultText != null">
+        result_text = #{resultText,jdbcType=LONGVARCHAR},
       </if>
       <if test="cname != null">
-        cname = #{cname,jdbcType=LONGVARCHAR},
+        cName = #{cname,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    where cid = #{cid,jdbcType=INTEGER}
+    where cId = #{cid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.CollectionWithBLOBs">
     update collection
-    set uid = #{uid,jdbcType=INTEGER},
-      cuid = #{cuid,jdbcType=INTEGER},
+    set cUid = #{cuid,jdbcType=INTEGER},
       time = #{time,jdbcType=DATE},
-      langguage = #{langguage,jdbcType=INTEGER},
-      origintext = #{origintext,jdbcType=LONGVARCHAR},
-      resulttext = #{resulttext,jdbcType=LONGVARCHAR},
-      cname = #{cname,jdbcType=LONGVARCHAR}
-    where cid = #{cid,jdbcType=INTEGER}
+      language = #{language,jdbcType=INTEGER},
+      origin_text = #{originText,jdbcType=LONGVARCHAR},
+      result_text = #{resultText,jdbcType=LONGVARCHAR},
+      cName = #{cname,jdbcType=LONGVARCHAR}
+    where cId = #{cid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.demo.springboot.translation.common.domain.Collection">
     update collection
-    set uid = #{uid,jdbcType=INTEGER},
-      cuid = #{cuid,jdbcType=INTEGER},
+    set cUid = #{cuid,jdbcType=INTEGER},
       time = #{time,jdbcType=DATE},
-      langguage = #{langguage,jdbcType=INTEGER}
-    where cid = #{cid,jdbcType=INTEGER}
+      language = #{language,jdbcType=INTEGER}
+    where cId = #{cid,jdbcType=INTEGER}
   </update>
 </mapper>

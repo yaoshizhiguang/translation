@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.springboot.translation.mapper.RteMapper">
   <resultMap id="BaseResultMap" type="com.demo.springboot.translation.common.domain.Rte">
-    <id column="rteid" jdbcType="INTEGER" property="rteid" />
+    <id column="rteId" jdbcType="INTEGER" property="rteid" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.demo.springboot.translation.common.domain.Rte">
-    <result column="rword" jdbcType="LONGVARCHAR" property="rword" />
-    <result column="eword" jdbcType="LONGVARCHAR" property="eword" />
+    <result column="rWord" jdbcType="LONGVARCHAR" property="rword" />
+    <result column="eWord" jdbcType="LONGVARCHAR" property="eword" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,10 +67,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    rteid
+    rteId
   </sql>
   <sql id="Blob_Column_List">
-    rword, eword
+    rWord, eWord
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.RteExample" resultMap="ResultMapWithBLOBs">
     select
@@ -108,11 +108,11 @@
     ,
     <include refid="Blob_Column_List" />
     from rte
-    where rteid = #{rteid,jdbcType=INTEGER}
+    where rteId = #{rteid,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from rte
-    where rteid = #{rteid,jdbcType=INTEGER}
+    where rteId = #{rteid,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.demo.springboot.translation.common.domain.RteExample">
     delete from rte
@@ -121,7 +121,7 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.demo.springboot.translation.common.domain.Rte">
-    insert into rte (rteid, rword, eword
+    insert into rte (rteId, rWord, eWord
       )
     values (#{rteid,jdbcType=INTEGER}, #{rword,jdbcType=LONGVARCHAR}, #{eword,jdbcType=LONGVARCHAR}
       )
@@ -130,13 +130,13 @@
     insert into rte
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="rteid != null">
-        rteid,
+        rteId,
       </if>
       <if test="rword != null">
-        rword,
+        rWord,
       </if>
       <if test="eword != null">
-        eword,
+        eWord,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -161,13 +161,13 @@
     update rte
     <set>
       <if test="record.rteid != null">
-        rteid = #{record.rteid,jdbcType=INTEGER},
+        rteId = #{record.rteid,jdbcType=INTEGER},
       </if>
       <if test="record.rword != null">
-        rword = #{record.rword,jdbcType=LONGVARCHAR},
+        rWord = #{record.rword,jdbcType=LONGVARCHAR},
       </if>
       <if test="record.eword != null">
-        eword = #{record.eword,jdbcType=LONGVARCHAR},
+        eWord = #{record.eword,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -176,16 +176,16 @@
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update rte
-    set rteid = #{record.rteid,jdbcType=INTEGER},
-      rword = #{record.rword,jdbcType=LONGVARCHAR},
-      eword = #{record.eword,jdbcType=LONGVARCHAR}
+    set rteId = #{record.rteid,jdbcType=INTEGER},
+      rWord = #{record.rword,jdbcType=LONGVARCHAR},
+      eWord = #{record.eword,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update rte
-    set rteid = #{record.rteid,jdbcType=INTEGER}
+    set rteId = #{record.rteid,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -194,18 +194,18 @@
     update rte
     <set>
       <if test="rword != null">
-        rword = #{rword,jdbcType=LONGVARCHAR},
+        rWord = #{rword,jdbcType=LONGVARCHAR},
       </if>
       <if test="eword != null">
-        eword = #{eword,jdbcType=LONGVARCHAR},
+        eWord = #{eword,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    where rteid = #{rteid,jdbcType=INTEGER}
+    where rteId = #{rteid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.Rte">
     update rte
-    set rword = #{rword,jdbcType=LONGVARCHAR},
-      eword = #{eword,jdbcType=LONGVARCHAR}
-    where rteid = #{rteid,jdbcType=INTEGER}
+    set rWord = #{rword,jdbcType=LONGVARCHAR},
+      eWord = #{eword,jdbcType=LONGVARCHAR}
+    where rteId = #{rteid,jdbcType=INTEGER}
   </update>
 </mapper>

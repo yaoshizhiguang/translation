@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.demo.springboot.translation.mapper.CteMapper">
   <resultMap id="BaseResultMap" type="com.demo.springboot.translation.common.domain.Cte">
-    <id column="cteid" jdbcType="INTEGER" property="cteid" />
+    <id column="cte_Id" jdbcType="INTEGER" property="cteId" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.demo.springboot.translation.common.domain.Cte">
-    <result column="cword" jdbcType="LONGVARCHAR" property="cword" />
-    <result column="eword" jdbcType="LONGVARCHAR" property="eword" />
+    <result column="c_Word" jdbcType="LONGVARCHAR" property="cWord" />
+    <result column="e_Word" jdbcType="LONGVARCHAR" property="eWord" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,10 +67,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    cteid
+    cte_Id
   </sql>
   <sql id="Blob_Column_List">
-    cword, eword
+    c_Word, e_Word
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.CteExample" resultMap="ResultMapWithBLOBs">
     select
@@ -108,11 +108,11 @@
     ,
     <include refid="Blob_Column_List" />
     from cte
-    where cteid = #{cteid,jdbcType=INTEGER}
+    where cte_Id = #{cteId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from cte
-    where cteid = #{cteid,jdbcType=INTEGER}
+    where cte_Id = #{cteId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.demo.springboot.translation.common.domain.CteExample">
     delete from cte
@@ -121,33 +121,33 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.demo.springboot.translation.common.domain.Cte">
-    insert into cte (cteid, cword, eword
+    insert into cte (cte_Id, c_Word, e_Word
       )
-    values (#{cteid,jdbcType=INTEGER}, #{cword,jdbcType=LONGVARCHAR}, #{eword,jdbcType=LONGVARCHAR}
+    values (#{cteId,jdbcType=INTEGER}, #{cWord,jdbcType=LONGVARCHAR}, #{eWord,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.demo.springboot.translation.common.domain.Cte">
     insert into cte
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="cteid != null">
-        cteid,
+      <if test="cteId != null">
+        cte_Id,
       </if>
-      <if test="cword != null">
-        cword,
+      <if test="cWord != null">
+        c_Word,
       </if>
-      <if test="eword != null">
-        eword,
+      <if test="eWord != null">
+        e_Word,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="cteid != null">
-        #{cteid,jdbcType=INTEGER},
+      <if test="cteId != null">
+        #{cteId,jdbcType=INTEGER},
       </if>
-      <if test="cword != null">
-        #{cword,jdbcType=LONGVARCHAR},
+      <if test="cWord != null">
+        #{cWord,jdbcType=LONGVARCHAR},
       </if>
-      <if test="eword != null">
-        #{eword,jdbcType=LONGVARCHAR},
+      <if test="eWord != null">
+        #{eWord,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -160,14 +160,14 @@
   <update id="updateByExampleSelective" parameterType="map">
     update cte
     <set>
-      <if test="record.cteid != null">
-        cteid = #{record.cteid,jdbcType=INTEGER},
+      <if test="record.cteId != null">
+        cte_Id = #{record.cteId,jdbcType=INTEGER},
       </if>
-      <if test="record.cword != null">
-        cword = #{record.cword,jdbcType=LONGVARCHAR},
+      <if test="record.cWord != null">
+        c_Word = #{record.cWord,jdbcType=LONGVARCHAR},
       </if>
-      <if test="record.eword != null">
-        eword = #{record.eword,jdbcType=LONGVARCHAR},
+      <if test="record.eWord != null">
+        e_Word = #{record.eWord,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -176,16 +176,16 @@
   </update>
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update cte
-    set cteid = #{record.cteid,jdbcType=INTEGER},
-      cword = #{record.cword,jdbcType=LONGVARCHAR},
-      eword = #{record.eword,jdbcType=LONGVARCHAR}
+    set cte_Id = #{record.cteId,jdbcType=INTEGER},
+      c_Word = #{record.cWord,jdbcType=LONGVARCHAR},
+      e_Word = #{record.eWord,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
     update cte
-    set cteid = #{record.cteid,jdbcType=INTEGER}
+    set cte_Id = #{record.cteId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -193,19 +193,19 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.demo.springboot.translation.common.domain.Cte">
     update cte
     <set>
-      <if test="cword != null">
-        cword = #{cword,jdbcType=LONGVARCHAR},
+      <if test="cWord != null">
+        c_Word = #{cWord,jdbcType=LONGVARCHAR},
       </if>
-      <if test="eword != null">
-        eword = #{eword,jdbcType=LONGVARCHAR},
+      <if test="eWord != null">
+        e_Word = #{eWord,jdbcType=LONGVARCHAR},
       </if>
     </set>
-    where cteid = #{cteid,jdbcType=INTEGER}
+    where cte_Id = #{cteId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.Cte">
     update cte
-    set cword = #{cword,jdbcType=LONGVARCHAR},
-      eword = #{eword,jdbcType=LONGVARCHAR}
-    where cteid = #{cteid,jdbcType=INTEGER}
+    set c_Word = #{cWord,jdbcType=LONGVARCHAR},
+      e_Word = #{eWord,jdbcType=LONGVARCHAR}
+    where cte_Id = #{cteId,jdbcType=INTEGER}
   </update>
 </mapper>

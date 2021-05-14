@@ -104,63 +104,63 @@ public class CteExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andCteidIsNull() {
-            addCriterion("cteid is null");
+        public Criteria andCteIdIsNull() {
+            addCriterion("cte_Id is null");
             return (Criteria) this;
         }
 
-        public Criteria andCteidIsNotNull() {
-            addCriterion("cteid is not null");
+        public Criteria andCteIdIsNotNull() {
+            addCriterion("cte_Id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCteidEqualTo(Integer value) {
-            addCriterion("cteid =", value, "cteid");
+        public Criteria andCteIdEqualTo(Integer value) {
+            addCriterion("cte_Id =", value, "cteId");
             return (Criteria) this;
         }
 
-        public Criteria andCteidNotEqualTo(Integer value) {
-            addCriterion("cteid <>", value, "cteid");
+        public Criteria andCteIdNotEqualTo(Integer value) {
+            addCriterion("cte_Id <>", value, "cteId");
             return (Criteria) this;
         }
 
-        public Criteria andCteidGreaterThan(Integer value) {
-            addCriterion("cteid >", value, "cteid");
+        public Criteria andCteIdGreaterThan(Integer value) {
+            addCriterion("cte_Id >", value, "cteId");
             return (Criteria) this;
         }
 
-        public Criteria andCteidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("cteid >=", value, "cteid");
+        public Criteria andCteIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("cte_Id >=", value, "cteId");
             return (Criteria) this;
         }
 
-        public Criteria andCteidLessThan(Integer value) {
-            addCriterion("cteid <", value, "cteid");
+        public Criteria andCteIdLessThan(Integer value) {
+            addCriterion("cte_Id <", value, "cteId");
             return (Criteria) this;
         }
 
-        public Criteria andCteidLessThanOrEqualTo(Integer value) {
-            addCriterion("cteid <=", value, "cteid");
+        public Criteria andCteIdLessThanOrEqualTo(Integer value) {
+            addCriterion("cte_Id <=", value, "cteId");
             return (Criteria) this;
         }
 
-        public Criteria andCteidIn(List<Integer> values) {
-            addCriterion("cteid in", values, "cteid");
+        public Criteria andCteIdIn(List<Integer> values) {
+            addCriterion("cte_Id in", values, "cteId");
             return (Criteria) this;
         }
 
-        public Criteria andCteidNotIn(List<Integer> values) {
-            addCriterion("cteid not in", values, "cteid");
+        public Criteria andCteIdNotIn(List<Integer> values) {
+            addCriterion("cte_Id not in", values, "cteId");
             return (Criteria) this;
         }
 
-        public Criteria andCteidBetween(Integer value1, Integer value2) {
-            addCriterion("cteid between", value1, value2, "cteid");
+        public Criteria andCteIdBetween(Integer value1, Integer value2) {
+            addCriterion("cte_Id between", value1, value2, "cteId");
             return (Criteria) this;
         }
 
-        public Criteria andCteidNotBetween(Integer value1, Integer value2) {
-            addCriterion("cteid not between", value1, value2, "cteid");
+        public Criteria andCteIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("cte_Id not between", value1, value2, "cteId");
             return (Criteria) this;
         }
     }

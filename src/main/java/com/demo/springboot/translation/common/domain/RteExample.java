@@ -105,62 +105,62 @@ public class RteExample {
         }
 
         public Criteria andRteidIsNull() {
-            addCriterion("rteid is null");
+            addCriterion("rteId is null");
             return (Criteria) this;
         }
 
         public Criteria andRteidIsNotNull() {
-            addCriterion("rteid is not null");
+            addCriterion("rteId is not null");
             return (Criteria) this;
         }
 
         public Criteria andRteidEqualTo(Integer value) {
-            addCriterion("rteid =", value, "rteid");
+            addCriterion("rteId =", value, "rteid");
             return (Criteria) this;
         }
 
         public Criteria andRteidNotEqualTo(Integer value) {
-            addCriterion("rteid <>", value, "rteid");
+            addCriterion("rteId <>", value, "rteid");
             return (Criteria) this;
         }
 
         public Criteria andRteidGreaterThan(Integer value) {
-            addCriterion("rteid >", value, "rteid");
+            addCriterion("rteId >", value, "rteid");
             return (Criteria) this;
         }
 
         public Criteria andRteidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("rteid >=", value, "rteid");
+            addCriterion("rteId >=", value, "rteid");
             return (Criteria) this;
         }
 
         public Criteria andRteidLessThan(Integer value) {
-            addCriterion("rteid <", value, "rteid");
+            addCriterion("rteId <", value, "rteid");
             return (Criteria) this;
         }
 
         public Criteria andRteidLessThanOrEqualTo(Integer value) {
-            addCriterion("rteid <=", value, "rteid");
+            addCriterion("rteId <=", value, "rteid");
             return (Criteria) this;
         }
 
         public Criteria andRteidIn(List<Integer> values) {
-            addCriterion("rteid in", values, "rteid");
+            addCriterion("rteId in", values, "rteid");
             return (Criteria) this;
         }
 
         public Criteria andRteidNotIn(List<Integer> values) {
-            addCriterion("rteid not in", values, "rteid");
+            addCriterion("rteId not in", values, "rteid");
             return (Criteria) this;
         }
 
         public Criteria andRteidBetween(Integer value1, Integer value2) {
-            addCriterion("rteid between", value1, value2, "rteid");
+            addCriterion("rteId between", value1, value2, "rteid");
             return (Criteria) this;
         }
 
         public Criteria andRteidNotBetween(Integer value1, Integer value2) {
-            addCriterion("rteid not between", value1, value2, "rteid");
+            addCriterion("rteId not between", value1, value2, "rteid");
             return (Criteria) this;
         }
     }

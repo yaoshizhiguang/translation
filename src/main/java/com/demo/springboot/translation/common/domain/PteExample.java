@@ -105,62 +105,62 @@ public class PteExample {
         }
 
         public Criteria andPteidIsNull() {
-            addCriterion("pteid is null");
+            addCriterion("pteId is null");
             return (Criteria) this;
         }
 
         public Criteria andPteidIsNotNull() {
-            addCriterion("pteid is not null");
+            addCriterion("pteId is not null");
             return (Criteria) this;
         }
 
         public Criteria andPteidEqualTo(Integer value) {
-            addCriterion("pteid =", value, "pteid");
+            addCriterion("pteId =", value, "pteid");
             return (Criteria) this;
         }
 
         public Criteria andPteidNotEqualTo(Integer value) {
-            addCriterion("pteid <>", value, "pteid");
+            addCriterion("pteId <>", value, "pteid");
             return (Criteria) this;
         }
 
         public Criteria andPteidGreaterThan(Integer value) {
-            addCriterion("pteid >", value, "pteid");
+            addCriterion("pteId >", value, "pteid");
             return (Criteria) this;
         }
 
         public Criteria andPteidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("pteid >=", value, "pteid");
+            addCriterion("pteId >=", value, "pteid");
             return (Criteria) this;
         }
 
         public Criteria andPteidLessThan(Integer value) {
-            addCriterion("pteid <", value, "pteid");
+            addCriterion("pteId <", value, "pteid");
             return (Criteria) this;
         }
 
         public Criteria andPteidLessThanOrEqualTo(Integer value) {
-            addCriterion("pteid <=", value, "pteid");
+            addCriterion("pteId <=", value, "pteid");
             return (Criteria) this;
         }
 
         public Criteria andPteidIn(List<Integer> values) {
-            addCriterion("pteid in", values, "pteid");
+            addCriterion("pteId in", values, "pteid");
             return (Criteria) this;
         }
 
         public Criteria andPteidNotIn(List<Integer> values) {
-            addCriterion("pteid not in", values, "pteid");
+            addCriterion("pteId not in", values, "pteid");
             return (Criteria) this;
         }
 
         public Criteria andPteidBetween(Integer value1, Integer value2) {
-            addCriterion("pteid between", value1, value2, "pteid");
+            addCriterion("pteId between", value1, value2, "pteid");
             return (Criteria) this;
         }
 
         public Criteria andPteidNotBetween(Integer value1, Integer value2) {
-            addCriterion("pteid not between", value1, value2, "pteid");
+            addCriterion("pteId not between", value1, value2, "pteid");
             return (Criteria) this;
         }
     }

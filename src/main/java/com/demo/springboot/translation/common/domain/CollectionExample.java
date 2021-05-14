@@ -133,182 +133,122 @@ public class CollectionExample {
         }
 
         public Criteria andCidIsNull() {
-            addCriterion("cid is null");
+            addCriterion("cId is null");
             return (Criteria) this;
         }
 
         public Criteria andCidIsNotNull() {
-            addCriterion("cid is not null");
+            addCriterion("cId is not null");
             return (Criteria) this;
         }
 
         public Criteria andCidEqualTo(Integer value) {
-            addCriterion("cid =", value, "cid");
+            addCriterion("cId =", value, "cid");
             return (Criteria) this;
         }
 
         public Criteria andCidNotEqualTo(Integer value) {
-            addCriterion("cid <>", value, "cid");
+            addCriterion("cId <>", value, "cid");
             return (Criteria) this;
         }
 
         public Criteria andCidGreaterThan(Integer value) {
-            addCriterion("cid >", value, "cid");
+            addCriterion("cId >", value, "cid");
             return (Criteria) this;
         }
 
         public Criteria andCidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("cid >=", value, "cid");
+            addCriterion("cId >=", value, "cid");
             return (Criteria) this;
         }
 
         public Criteria andCidLessThan(Integer value) {
-            addCriterion("cid <", value, "cid");
+            addCriterion("cId <", value, "cid");
             return (Criteria) this;
         }
 
         public Criteria andCidLessThanOrEqualTo(Integer value) {
-            addCriterion("cid <=", value, "cid");
+            addCriterion("cId <=", value, "cid");
             return (Criteria) this;
         }
 
         public Criteria andCidIn(List<Integer> values) {
-            addCriterion("cid in", values, "cid");
+            addCriterion("cId in", values, "cid");
             return (Criteria) this;
         }
 
         public Criteria andCidNotIn(List<Integer> values) {
-            addCriterion("cid not in", values, "cid");
+            addCriterion("cId not in", values, "cid");
             return (Criteria) this;
         }
 
         public Criteria andCidBetween(Integer value1, Integer value2) {
-            addCriterion("cid between", value1, value2, "cid");
+            addCriterion("cId between", value1, value2, "cid");
             return (Criteria) this;
         }
 
         public Criteria andCidNotBetween(Integer value1, Integer value2) {
-            addCriterion("cid not between", value1, value2, "cid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidIsNull() {
-            addCriterion("uid is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidIsNotNull() {
-            addCriterion("uid is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidEqualTo(Integer value) {
-            addCriterion("uid =", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotEqualTo(Integer value) {
-            addCriterion("uid <>", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidGreaterThan(Integer value) {
-            addCriterion("uid >", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("uid >=", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidLessThan(Integer value) {
-            addCriterion("uid <", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidLessThanOrEqualTo(Integer value) {
-            addCriterion("uid <=", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidIn(List<Integer> values) {
-            addCriterion("uid in", values, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotIn(List<Integer> values) {
-            addCriterion("uid not in", values, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidBetween(Integer value1, Integer value2) {
-            addCriterion("uid between", value1, value2, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotBetween(Integer value1, Integer value2) {
-            addCriterion("uid not between", value1, value2, "uid");
+            addCriterion("cId not between", value1, value2, "cid");
             return (Criteria) this;
         }
 
         public Criteria andCuidIsNull() {
-            addCriterion("cuid is null");
+            addCriterion("cUid is null");
             return (Criteria) this;
         }
 
         public Criteria andCuidIsNotNull() {
-            addCriterion("cuid is not null");
+            addCriterion("cUid is not null");
             return (Criteria) this;
         }
 
         public Criteria andCuidEqualTo(Integer value) {
-            addCriterion("cuid =", value, "cuid");
+            addCriterion("cUid =", value, "cuid");
             return (Criteria) this;
         }
 
         public Criteria andCuidNotEqualTo(Integer value) {
-            addCriterion("cuid <>", value, "cuid");
+            addCriterion("cUid <>", value, "cuid");
             return (Criteria) this;
         }
 
         public Criteria andCuidGreaterThan(Integer value) {
-            addCriterion("cuid >", value, "cuid");
+            addCriterion("cUid >", value, "cuid");
             return (Criteria) this;
         }
 
         public Criteria andCuidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("cuid >=", value, "cuid");
+            addCriterion("cUid >=", value, "cuid");
             return (Criteria) this;
         }
 
         public Criteria andCuidLessThan(Integer value) {
-            addCriterion("cuid <", value, "cuid");
+            addCriterion("cUid <", value, "cuid");
             return (Criteria) this;
         }
 
         public Criteria andCuidLessThanOrEqualTo(Integer value) {
-            addCriterion("cuid <=", value, "cuid");
+            addCriterion("cUid <=", value, "cuid");
             return (Criteria) this;
         }
 
         public Criteria andCuidIn(List<Integer> values) {
-            addCriterion("cuid in", values, "cuid");
+            addCriterion("cUid in", values, "cuid");
             return (Criteria) this;
         }
 
         public Criteria andCuidNotIn(List<Integer> values) {
-            addCriterion("cuid not in", values, "cuid");
+            addCriterion("cUid not in", values, "cuid");
             return (Criteria) this;
         }
 
         public Criteria andCuidBetween(Integer value1, Integer value2) {
-            addCriterion("cuid between", value1, value2, "cuid");
+            addCriterion("cUid between", value1, value2, "cuid");
             return (Criteria) this;
         }
 
         public Criteria andCuidNotBetween(Integer value1, Integer value2) {
-            addCriterion("cuid not between", value1, value2, "cuid");
+            addCriterion("cUid not between", value1, value2, "cuid");
             return (Criteria) this;
         }
 
@@ -372,63 +312,63 @@ public class CollectionExample {
             return (Criteria) this;
         }
 
-        public Criteria andLangguageIsNull() {
-            addCriterion("langguage is null");
+        public Criteria andLanguageIsNull() {
+            addCriterion("language is null");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageIsNotNull() {
-            addCriterion("langguage is not null");
+        public Criteria andLanguageIsNotNull() {
+            addCriterion("language is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageEqualTo(Integer value) {
-            addCriterion("langguage =", value, "langguage");
+        public Criteria andLanguageEqualTo(Integer value) {
+            addCriterion("language =", value, "language");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageNotEqualTo(Integer value) {
-            addCriterion("langguage <>", value, "langguage");
+        public Criteria andLanguageNotEqualTo(Integer value) {
+            addCriterion("language <>", value, "language");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageGreaterThan(Integer value) {
-            addCriterion("langguage >", value, "langguage");
+        public Criteria andLanguageGreaterThan(Integer value) {
+            addCriterion("language >", value, "language");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageGreaterThanOrEqualTo(Integer value) {
-            addCriterion("langguage >=", value, "langguage");
+        public Criteria andLanguageGreaterThanOrEqualTo(Integer value) {
+            addCriterion("language >=", value, "language");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageLessThan(Integer value) {
-            addCriterion("langguage <", value, "langguage");
+        public Criteria andLanguageLessThan(Integer value) {
+            addCriterion("language <", value, "language");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageLessThanOrEqualTo(Integer value) {
-            addCriterion("langguage <=", value, "langguage");
+        public Criteria andLanguageLessThanOrEqualTo(Integer value) {
+            addCriterion("language <=", value, "language");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageIn(List<Integer> values) {
-            addCriterion("langguage in", values, "langguage");
+        public Criteria andLanguageIn(List<Integer> values) {
+            addCriterion("language in", values, "language");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageNotIn(List<Integer> values) {
-            addCriterion("langguage not in", values, "langguage");
+        public Criteria andLanguageNotIn(List<Integer> values) {
+            addCriterion("language not in", values, "language");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageBetween(Integer value1, Integer value2) {
-            addCriterion("langguage between", value1, value2, "langguage");
+        public Criteria andLanguageBetween(Integer value1, Integer value2) {
+            addCriterion("language between", value1, value2, "language");
             return (Criteria) this;
         }
 
-        public Criteria andLangguageNotBetween(Integer value1, Integer value2) {
-            addCriterion("langguage not between", value1, value2, "langguage");
+        public Criteria andLanguageNotBetween(Integer value1, Integer value2) {
+            addCriterion("language not between", value1, value2, "language");
             return (Criteria) this;
         }
     }
