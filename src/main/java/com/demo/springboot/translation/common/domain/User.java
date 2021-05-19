@@ -1,16 +1,24 @@
 package com.demo.springboot.translation.common.domain;
 
 public class User {
-    private Integer uid;
+    private String uid;
 
     private String pass;
 
-    public Integer getUid() {
+    private String name;
+
+    public User(String uid,String pass,String name){
+        this.uid = uid;
+        this.pass = pass;
+        this.name = name;
+    }
+
+    public String getUid() {
         return uid;
     }
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
+    public void setUid(String uid) {
+        this.uid = uid == null ? null : uid.trim();
     }
 
     public String getPass() {
@@ -19,5 +27,13 @@ public class User {
 
     public void setPass(String pass) {
         this.pass = pass == null ? null : pass.trim();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 }

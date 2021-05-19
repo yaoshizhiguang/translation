@@ -10,7 +10,7 @@ public interface CteMapper {
 
     int deleteByExample(CteExample example);
 
-    int deleteByPrimaryKey(Integer cteId);
+    int deleteByPrimaryKey(Integer cteid);
 
     int insert(Cte record);
 
@@ -20,7 +20,7 @@ public interface CteMapper {
 
     List<Cte> selectByExample(CteExample example);
 
-    Cte selectByPrimaryKey(Integer cteId);
+    Cte selectByPrimaryKey(Integer cteid);
 
     int updateByExampleSelective(@Param("record") Cte record, @Param("example") CteExample example);
 

@@ -114,54 +114,69 @@ public class UserExample {
             return (Criteria) this;
         }
 
-        public Criteria andUidEqualTo(Integer value) {
+        public Criteria andUidEqualTo(String value) {
             addCriterion("uId =", value, "uid");
             return (Criteria) this;
         }
 
-        public Criteria andUidNotEqualTo(Integer value) {
+        public Criteria andUidNotEqualTo(String value) {
             addCriterion("uId <>", value, "uid");
             return (Criteria) this;
         }
 
-        public Criteria andUidGreaterThan(Integer value) {
+        public Criteria andUidGreaterThan(String value) {
             addCriterion("uId >", value, "uid");
             return (Criteria) this;
         }
 
-        public Criteria andUidGreaterThanOrEqualTo(Integer value) {
+        public Criteria andUidGreaterThanOrEqualTo(String value) {
             addCriterion("uId >=", value, "uid");
             return (Criteria) this;
         }
 
-        public Criteria andUidLessThan(Integer value) {
+        public Criteria andUidLessThan(String value) {
             addCriterion("uId <", value, "uid");
             return (Criteria) this;
         }
 
-        public Criteria andUidLessThanOrEqualTo(Integer value) {
+        public Criteria andUidLessThanOrEqualTo(String value) {
             addCriterion("uId <=", value, "uid");
             return (Criteria) this;
         }
 
-        public Criteria andUidIn(List<Integer> values) {
+        public Criteria andUidLike(String value) {
+            addCriterion("uId like", value, "uid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUidNotLike(String value) {
+            addCriterion("uId not like", value, "uid");
+            return (Criteria) this;
+        }
+
+        public Criteria andUidIn(List<String> values) {
             addCriterion("uId in", values, "uid");
             return (Criteria) this;
         }
 
-        public Criteria andUidNotIn(List<Integer> values) {
+        public Criteria andUidNotIn(List<String> values) {
             addCriterion("uId not in", values, "uid");
             return (Criteria) this;
         }
 
-        public Criteria andUidBetween(Integer value1, Integer value2) {
+        public Criteria andUidBetween(String value1, String value2) {
             addCriterion("uId between", value1, value2, "uid");
             return (Criteria) this;
         }
 
-        public Criteria andUidNotBetween(Integer value1, Integer value2) {
+        public Criteria andUidNotBetween(String value1, String value2) {
             addCriterion("uId not between", value1, value2, "uid");
             return (Criteria) this;
+        }
+
+        public UserExample.Criteria andPassEqualTo(String value) {
+            addCriterion("password =", value, "password");
+            return (UserExample.Criteria) this;
         }
     }
 

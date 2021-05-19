@@ -163,6 +163,11 @@ public class RteExample {
             addCriterion("rteId not between", value1, value2, "rteid");
             return (Criteria) this;
         }
+
+        public RteExample.Criteria andRteWordEqualTo(String value) {
+            addCriterion("RWord =", value, "RWord");
+            return (RteExample.Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

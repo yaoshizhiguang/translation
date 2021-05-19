@@ -163,6 +163,10 @@ public class PteExample {
             addCriterion("pteId not between", value1, value2, "pteid");
             return (Criteria) this;
         }
+        public PteExample.Criteria andPteWordEqualTo(String value) {
+            addCriterion("PWord =", value, "PWord");
+            return (PteExample.Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
