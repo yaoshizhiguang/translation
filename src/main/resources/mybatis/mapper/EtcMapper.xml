@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.springboot.translation.mapper.EtcMapper">
+  <resultMap id="BaseResultMap" type="com.demo.springboot.translation.common.domain.Etc">
+    <id column="etcId" jdbcType="INTEGER" property="etcid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.demo.springboot.translation.common.domain.Etc">
+    <result column="eWord" jdbcType="LONGVARCHAR" property="eword" />
+    <result column="cWord" jdbcType="LONGVARCHAR" property="cword" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    etcId
+  </sql>
+  <sql id="Blob_Column_List">
+    eWord, cWord
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.EtcExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from etc
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.demo.springboot.translation.common.domain.EtcExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from etc
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from etc
+    where etcId = #{etcid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from etc
+    where etcId = #{etcid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.demo.springboot.translation.common.domain.EtcExample">
+    delete from etc
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.demo.springboot.translation.common.domain.Etc">
+    insert into etc (etcId, eWord, cWord
+      )
+    values (#{etcid,jdbcType=INTEGER}, #{eword,jdbcType=LONGVARCHAR}, #{cword,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.springboot.translation.common.domain.Etc">
+    insert into etc
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="etcid != null">
+        etcId,
+      </if>
+      <if test="eword != null">
+        eWord,
+      </if>
+      <if test="cword != null">
+        cWord,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="etcid != null">
+        #{etcid,jdbcType=INTEGER},
+      </if>
+      <if test="eword != null">
+        #{eword,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="cword != null">
+        #{cword,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.demo.springboot.translation.common.domain.EtcExample" resultType="java.lang.Long">
+    select count(*) from etc
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update etc
+    <set>
+      <if test="record.etcid != null">
+        etcId = #{record.etcid,jdbcType=INTEGER},
+      </if>
+      <if test="record.eword != null">
+        eWord = #{record.eword,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.cword != null">
+        cWord = #{record.cword,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update etc
+    set etcId = #{record.etcid,jdbcType=INTEGER},
+      eWord = #{record.eword,jdbcType=LONGVARCHAR},
+      cWord = #{record.cword,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update etc
+    set etcId = #{record.etcid,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.springboot.translation.common.domain.Etc">
+    update etc
+    <set>
+      <if test="eword != null">
+        eWord = #{eword,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="cword != null">
+        cWord = #{cword,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where etcId = #{etcid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.Etc">
+    update etc
+    set eWord = #{eword,jdbcType=LONGVARCHAR},
+      cWord = #{cword,jdbcType=LONGVARCHAR}
+    where etcId = #{etcid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -3,14 +3,14 @@ package com.demo.springboot.translation.common.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserExample {
+public class EtrExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public UserExample() {
+    public EtrExample() {
         oredCriteria = new ArrayList<>();
     }
 
@@ -104,78 +104,64 @@ public class UserExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
-        public Criteria andUidIsNull() {
-            addCriterion("uId is null");
+        public Criteria andEtridIsNull() {
+            addCriterion("etrId is null");
             return (Criteria) this;
         }
 
-        public Criteria andUidIsNotNull() {
-            addCriterion("uId is not null");
+        public Criteria andEtridIsNotNull() {
+            addCriterion("etrId is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUidEqualTo(String value) {
-            addCriterion("uId =", value, "uid");
+        public Criteria andEtridEqualTo(Integer value) {
+            addCriterion("etrId =", value, "etrid");
             return (Criteria) this;
         }
 
-        public Criteria andUidNotEqualTo(String value) {
-            addCriterion("uId <>", value, "uid");
+        public Criteria andEtridNotEqualTo(Integer value) {
+            addCriterion("etrId <>", value, "etrid");
             return (Criteria) this;
         }
 
-        public Criteria andUidGreaterThan(String value) {
-            addCriterion("uId >", value, "uid");
+        public Criteria andEtridGreaterThan(Integer value) {
+            addCriterion("etrId >", value, "etrid");
             return (Criteria) this;
         }
 
-        public Criteria andUidGreaterThanOrEqualTo(String value) {
-            addCriterion("uId >=", value, "uid");
+        public Criteria andEtridGreaterThanOrEqualTo(Integer value) {
+            addCriterion("etrId >=", value, "etrid");
             return (Criteria) this;
         }
 
-        public Criteria andUidLessThan(String value) {
-            addCriterion("uId <", value, "uid");
+        public Criteria andEtridLessThan(Integer value) {
+            addCriterion("etrId <", value, "etrid");
             return (Criteria) this;
         }
 
-        public Criteria andUidLessThanOrEqualTo(String value) {
-            addCriterion("uId <=", value, "uid");
+        public Criteria andEtridLessThanOrEqualTo(Integer value) {
+            addCriterion("etrId <=", value, "etrid");
             return (Criteria) this;
         }
 
-        public Criteria andUidLike(String value) {
-            addCriterion("uId like", value, "uid");
+        public Criteria andEtridIn(List<Integer> values) {
+            addCriterion("etrId in", values, "etrid");
             return (Criteria) this;
         }
 
-        public Criteria andUidNotLike(String value) {
-            addCriterion("uId not like", value, "uid");
+        public Criteria andEtridNotIn(List<Integer> values) {
+            addCriterion("etrId not in", values, "etrid");
             return (Criteria) this;
         }
 
-        public Criteria andUidIn(List<String> values) {
-            addCriterion("uId in", values, "uid");
+        public Criteria andEtridBetween(Integer value1, Integer value2) {
+            addCriterion("etrId between", value1, value2, "etrid");
             return (Criteria) this;
         }
 
-        public Criteria andUidNotIn(List<String> values) {
-            addCriterion("uId not in", values, "uid");
+        public Criteria andEtridNotBetween(Integer value1, Integer value2) {
+            addCriterion("etrId not between", value1, value2, "etrid");
             return (Criteria) this;
-        }
-
-        public Criteria andUidBetween(String value1, String value2) {
-            addCriterion("uId between", value1, value2, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotBetween(String value1, String value2) {
-            addCriterion("uId not between", value1, value2, "uid");
-            return (Criteria) this;
-        }
-        public UserExample.Criteria andPassEqualTo(String value) {
-            addCriterion("password =", value, "password");
-            return (UserExample.Criteria) this;
         }
     }
 
