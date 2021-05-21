@@ -1,9 +1,13 @@
 package com.demo.springboot.translation.controller;
 
+import com.demo.springboot.translation.common.domain.HistoryWithBLOBs;
+import com.demo.springboot.translation.common.domain.User;
 import com.demo.springboot.translation.mapper.CteMapper;
 import com.demo.springboot.translation.mapper.PteMapper;
 import com.demo.springboot.translation.mapper.RteMapper;
+import com.demo.springboot.translation.service.HistoryService;
 import com.demo.springboot.translation.service.TranslateService;
+import com.demo.springboot.translation.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +27,10 @@ public class TranslateController {
     @Autowired
     private TranslateService translateService;
     @Autowired
+    private HistoryService historyService;
+    @Autowired
+    private UserService userService;
+    @Autowired
     private CteMapper cteMapper;
     @Autowired
     private PteMapper pteMapper;
@@ -32,10 +40,20 @@ public class TranslateController {
     get input from user
     */
     @PostMapping("/translate")
-    public String translate(@RequestParam("input") String input,@RequestParam("type") String type, Model model)   {
+    public String translate(@RequestParam("input")String input,
+                            @RequestParam("type")String type, User user, Model model)   {
         String result = translateService.findInDic(input,type);
+        HistoryWithBLOBs history = new HistoryWithBLOBs();
+        history.setOriginText(input);
+        history.setHuid(userService.findUser(user).getUid());
+
         if(result!=null){
+            //存入历史记录
+            history.setResultText(result);
+            historyService.add(history);
+
             model.addAttribute("result",result);
+
             return "translate";
         }else{
             //调用翻译程序
