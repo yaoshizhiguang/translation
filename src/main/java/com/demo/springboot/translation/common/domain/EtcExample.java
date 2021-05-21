@@ -167,7 +167,7 @@ public class EtcExample {
         public EtcExample.Criteria andEtcWordEqualTo(String input){
             addCriterion("eWord =", input, "eWord");
             return (EtcExample.Criteria) this;
-        };
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {
