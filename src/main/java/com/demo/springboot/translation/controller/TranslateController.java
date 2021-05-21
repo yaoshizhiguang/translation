@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.Map;
 import java.util.logging.Logger;
 /*
@@ -46,10 +47,13 @@ public class TranslateController {
         HistoryWithBLOBs history = new HistoryWithBLOBs();
         history.setOriginText(input);
         history.setHuid(userService.findUser(user).getUid());
+        //user.getUid()
 
         if(result!=null){
             //存入历史记录
             history.setResultText(result);
+            history.setTime(new Date());
+
             historyService.add(history);
 
             model.addAttribute("result",result);
