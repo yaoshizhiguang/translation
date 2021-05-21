@@ -163,6 +163,11 @@ public class EtrExample {
             addCriterion("etrId not between", value1, value2, "etrid");
             return (Criteria) this;
         }
+
+        public EtrExample.Criteria andEtrWordEqualTo(String value) {
+            addCriterion("eWord =", value, "eWord");
+            return (EtrExample.Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

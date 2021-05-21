@@ -133,182 +133,132 @@ public class HistoryExample {
         }
 
         public Criteria andHidIsNull() {
-            addCriterion("hid is null");
+            addCriterion("hId is null");
             return (Criteria) this;
         }
 
         public Criteria andHidIsNotNull() {
-            addCriterion("hid is not null");
+            addCriterion("hId is not null");
             return (Criteria) this;
         }
 
         public Criteria andHidEqualTo(Integer value) {
-            addCriterion("hid =", value, "hid");
+            addCriterion("hId =", value, "hid");
             return (Criteria) this;
         }
 
         public Criteria andHidNotEqualTo(Integer value) {
-            addCriterion("hid <>", value, "hid");
+            addCriterion("hId <>", value, "hid");
             return (Criteria) this;
         }
 
         public Criteria andHidGreaterThan(Integer value) {
-            addCriterion("hid >", value, "hid");
+            addCriterion("hId >", value, "hid");
             return (Criteria) this;
         }
 
         public Criteria andHidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("hid >=", value, "hid");
+            addCriterion("hId >=", value, "hid");
             return (Criteria) this;
         }
 
         public Criteria andHidLessThan(Integer value) {
-            addCriterion("hid <", value, "hid");
+            addCriterion("hId <", value, "hid");
             return (Criteria) this;
         }
 
         public Criteria andHidLessThanOrEqualTo(Integer value) {
-            addCriterion("hid <=", value, "hid");
+            addCriterion("hId <=", value, "hid");
             return (Criteria) this;
         }
 
         public Criteria andHidIn(List<Integer> values) {
-            addCriterion("hid in", values, "hid");
+            addCriterion("hId in", values, "hid");
             return (Criteria) this;
         }
 
         public Criteria andHidNotIn(List<Integer> values) {
-            addCriterion("hid not in", values, "hid");
+            addCriterion("hId not in", values, "hid");
             return (Criteria) this;
         }
 
         public Criteria andHidBetween(Integer value1, Integer value2) {
-            addCriterion("hid between", value1, value2, "hid");
+            addCriterion("hId between", value1, value2, "hid");
             return (Criteria) this;
         }
 
         public Criteria andHidNotBetween(Integer value1, Integer value2) {
-            addCriterion("hid not between", value1, value2, "hid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidIsNull() {
-            addCriterion("uid is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidIsNotNull() {
-            addCriterion("uid is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidEqualTo(Integer value) {
-            addCriterion("uid =", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotEqualTo(Integer value) {
-            addCriterion("uid <>", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidGreaterThan(Integer value) {
-            addCriterion("uid >", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("uid >=", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidLessThan(Integer value) {
-            addCriterion("uid <", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidLessThanOrEqualTo(Integer value) {
-            addCriterion("uid <=", value, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidIn(List<Integer> values) {
-            addCriterion("uid in", values, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotIn(List<Integer> values) {
-            addCriterion("uid not in", values, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidBetween(Integer value1, Integer value2) {
-            addCriterion("uid between", value1, value2, "uid");
-            return (Criteria) this;
-        }
-
-        public Criteria andUidNotBetween(Integer value1, Integer value2) {
-            addCriterion("uid not between", value1, value2, "uid");
+            addCriterion("hId not between", value1, value2, "hid");
             return (Criteria) this;
         }
 
         public Criteria andHuidIsNull() {
-            addCriterion("huid is null");
+            addCriterion("hUid is null");
             return (Criteria) this;
         }
 
         public Criteria andHuidIsNotNull() {
-            addCriterion("huid is not null");
+            addCriterion("hUid is not null");
             return (Criteria) this;
         }
 
-        public Criteria andHuidEqualTo(Integer value) {
-            addCriterion("huid =", value, "huid");
+        public Criteria andHuidEqualTo(String value) {
+            addCriterion("hUid =", value, "huid");
             return (Criteria) this;
         }
 
-        public Criteria andHuidNotEqualTo(Integer value) {
-            addCriterion("huid <>", value, "huid");
+        public Criteria andHuidNotEqualTo(String value) {
+            addCriterion("hUid <>", value, "huid");
             return (Criteria) this;
         }
 
-        public Criteria andHuidGreaterThan(Integer value) {
-            addCriterion("huid >", value, "huid");
+        public Criteria andHuidGreaterThan(String value) {
+            addCriterion("hUid >", value, "huid");
             return (Criteria) this;
         }
 
-        public Criteria andHuidGreaterThanOrEqualTo(Integer value) {
-            addCriterion("huid >=", value, "huid");
+        public Criteria andHuidGreaterThanOrEqualTo(String value) {
+            addCriterion("hUid >=", value, "huid");
             return (Criteria) this;
         }
 
-        public Criteria andHuidLessThan(Integer value) {
-            addCriterion("huid <", value, "huid");
+        public Criteria andHuidLessThan(String value) {
+            addCriterion("hUid <", value, "huid");
             return (Criteria) this;
         }
 
-        public Criteria andHuidLessThanOrEqualTo(Integer value) {
-            addCriterion("huid <=", value, "huid");
+        public Criteria andHuidLessThanOrEqualTo(String value) {
+            addCriterion("hUid <=", value, "huid");
             return (Criteria) this;
         }
 
-        public Criteria andHuidIn(List<Integer> values) {
-            addCriterion("huid in", values, "huid");
+        public Criteria andHuidLike(String value) {
+            addCriterion("hUid like", value, "huid");
             return (Criteria) this;
         }
 
-        public Criteria andHuidNotIn(List<Integer> values) {
-            addCriterion("huid not in", values, "huid");
+        public Criteria andHuidNotLike(String value) {
+            addCriterion("hUid not like", value, "huid");
             return (Criteria) this;
         }
 
-        public Criteria andHuidBetween(Integer value1, Integer value2) {
-            addCriterion("huid between", value1, value2, "huid");
+        public Criteria andHuidIn(List<String> values) {
+            addCriterion("hUid in", values, "huid");
             return (Criteria) this;
         }
 
-        public Criteria andHuidNotBetween(Integer value1, Integer value2) {
-            addCriterion("huid not between", value1, value2, "huid");
+        public Criteria andHuidNotIn(List<String> values) {
+            addCriterion("hUid not in", values, "huid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHuidBetween(String value1, String value2) {
+            addCriterion("hUid between", value1, value2, "huid");
+            return (Criteria) this;
+        }
+
+        public Criteria andHuidNotBetween(String value1, String value2) {
+            addCriterion("hUid not between", value1, value2, "huid");
             return (Criteria) this;
         }
 

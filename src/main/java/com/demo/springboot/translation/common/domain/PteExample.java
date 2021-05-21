@@ -164,7 +164,7 @@ public class PteExample {
             return (Criteria) this;
         }
         public PteExample.Criteria andPteWordEqualTo(String value) {
-            addCriterion("PWord =", value, "PWord");
+            addCriterion("pWord =", value, "pWord");
             return (PteExample.Criteria) this;
         }
     }

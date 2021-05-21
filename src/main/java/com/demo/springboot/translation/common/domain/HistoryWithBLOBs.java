@@ -1,23 +1,23 @@
 package com.demo.springboot.translation.common.domain;
 
 public class HistoryWithBLOBs extends History {
-    private String origintext;
+    private String originText;
 
-    private String resulttext;
+    private String resultText;
 
-    public String getOrigintext() {
-        return origintext;
+    public String getOriginText() {
+        return originText;
     }
 
-    public void setOrigintext(String origintext) {
-        this.origintext = origintext == null ? null : origintext.trim();
+    public void setOriginText(String originText) {
+        this.originText = originText == null ? null : originText.trim();
     }
 
-    public String getResulttext() {
-        return resulttext;
+    public String getResultText() {
+        return resultText;
     }
 
-    public void setResulttext(String resulttext) {
-        this.resulttext = resulttext == null ? null : resulttext.trim();
+    public void setResultText(String resultText) {
+        this.resultText = resultText == null ? null : resultText.trim();
     }
 }

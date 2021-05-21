@@ -6,8 +6,12 @@ import com.demo.springboot.translation.mapper.RteMapper;
 import com.demo.springboot.translation.service.TranslateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
+import java.util.logging.Logger;
 /*
 本类是翻译模块的控制类
 当翻译的输入是词典中的词语，访问词典
@@ -27,11 +31,21 @@ public class TranslateController {
     /*
     get input from user
     */
-    String input;
-//  if input is a entry in dictionary
-    public boolean isInputInDic(@RequestParam("input")String input,@RequestParam("type")String type){
-        return translateService.isInDic(input,type);
+    @PostMapping("/translate")
+    public String translate(@RequestParam("input") String input,@RequestParam("type") String type, Model model)   {
+        String result = translateService.findInDic(input,type);
+        if(result!=null){
+            model.addAttribute("result",result);
+            return "translate";
+        }else{
+            //调用翻译程序
+            //result = 调用翻译程序
+            //返回
+            return "";
+        }
     }
+
+//  if input is a entry in dictionary
 
 //        visit dictionary and find entry
 //        return information about this entry

@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface TranslateService {
 
-    boolean isInDic(String input,String type);
+    String findInDic(String input, String type);
 }

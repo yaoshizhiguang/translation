@@ -165,7 +165,7 @@ public class RteExample {
         }
 
         public RteExample.Criteria andRteWordEqualTo(String value) {
-            addCriterion("RWord =", value, "RWord");
+            addCriterion("rWord =", value, "rWord");
             return (RteExample.Criteria) this;
         }
     }

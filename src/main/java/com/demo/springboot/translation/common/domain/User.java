@@ -7,13 +7,7 @@ public class User {
 
     private String name;
 
-    public User(){
-
-    }
-    public User(String uid,String pass,String name){
-        this.uid = uid;
-        this.pass = pass;
-        this.name = name;
+    public User(String uId, String password, String name) {
     }
 
     public String getUid() {

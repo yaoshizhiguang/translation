@@ -5,7 +5,7 @@ import java.util.Date;
 public class Collection {
     private Integer cid;
 
-    private Integer cuid;
+    private String cuid;
 
     private Date time;
 
@@ -19,12 +19,12 @@ public class Collection {
         this.cid = cid;
     }
 
-    public Integer getCuid() {
+    public String getCuid() {
         return cuid;
     }
 
-    public void setCuid(Integer cuid) {
-        this.cuid = cuid;
+    public void setCuid(String cuid) {
+        this.cuid = cuid == null ? null : cuid.trim();
     }
 
     public Date getTime() {

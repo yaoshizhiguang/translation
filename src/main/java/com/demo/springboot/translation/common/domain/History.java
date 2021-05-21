@@ -5,9 +5,7 @@ import java.util.Date;
 public class History {
     private Integer hid;
 
-    private Integer uid;
-
-    private Integer huid;
+    private String huid;
 
     private Date time;
 
@@ -19,20 +17,12 @@ public class History {
         this.hid = hid;
     }
 
-    public Integer getUid() {
-        return uid;
-    }
-
-    public void setUid(Integer uid) {
-        this.uid = uid;
-    }
-
-    public Integer getHuid() {
+    public String getHuid() {
         return huid;
     }
 
-    public void setHuid(Integer huid) {
-        this.huid = huid;
+    public void setHuid(String huid) {
+        this.huid = huid == null ? null : huid.trim();
     }
 
     public Date getTime() {

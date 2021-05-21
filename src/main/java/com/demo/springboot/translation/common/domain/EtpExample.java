@@ -163,6 +163,11 @@ public class EtpExample {
             addCriterion("etpId not between", value1, value2, "etpid");
             return (Criteria) this;
         }
+
+        public EtpExample.Criteria andEtpWordEqualTo(String value) {
+            addCriterion("eWord =", value, "eWord");
+            return (EtpExample.Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

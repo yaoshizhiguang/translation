@@ -202,52 +202,62 @@ public class CollectionExample {
             return (Criteria) this;
         }
 
-        public Criteria andCuidEqualTo(Integer value) {
+        public Criteria andCuidEqualTo(String value) {
             addCriterion("cUid =", value, "cuid");
             return (Criteria) this;
         }
 
-        public Criteria andCuidNotEqualTo(Integer value) {
+        public Criteria andCuidNotEqualTo(String value) {
             addCriterion("cUid <>", value, "cuid");
             return (Criteria) this;
         }
 
-        public Criteria andCuidGreaterThan(Integer value) {
+        public Criteria andCuidGreaterThan(String value) {
             addCriterion("cUid >", value, "cuid");
             return (Criteria) this;
         }
 
-        public Criteria andCuidGreaterThanOrEqualTo(Integer value) {
+        public Criteria andCuidGreaterThanOrEqualTo(String value) {
             addCriterion("cUid >=", value, "cuid");
             return (Criteria) this;
         }
 
-        public Criteria andCuidLessThan(Integer value) {
+        public Criteria andCuidLessThan(String value) {
             addCriterion("cUid <", value, "cuid");
             return (Criteria) this;
         }
 
-        public Criteria andCuidLessThanOrEqualTo(Integer value) {
+        public Criteria andCuidLessThanOrEqualTo(String value) {
             addCriterion("cUid <=", value, "cuid");
             return (Criteria) this;
         }
 
-        public Criteria andCuidIn(List<Integer> values) {
+        public Criteria andCuidLike(String value) {
+            addCriterion("cUid like", value, "cuid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCuidNotLike(String value) {
+            addCriterion("cUid not like", value, "cuid");
+            return (Criteria) this;
+        }
+
+        public Criteria andCuidIn(List<String> values) {
             addCriterion("cUid in", values, "cuid");
             return (Criteria) this;
         }
 
-        public Criteria andCuidNotIn(List<Integer> values) {
+        public Criteria andCuidNotIn(List<String> values) {
             addCriterion("cUid not in", values, "cuid");
             return (Criteria) this;
         }
 
-        public Criteria andCuidBetween(Integer value1, Integer value2) {
+        public Criteria andCuidBetween(String value1, String value2) {
             addCriterion("cUid between", value1, value2, "cuid");
             return (Criteria) this;
         }
 
-        public Criteria andCuidNotBetween(Integer value1, Integer value2) {
+        public Criteria andCuidNotBetween(String value1, String value2) {
             addCriterion("cUid not between", value1, value2, "cuid");
             return (Criteria) this;
         }
