@@ -7,6 +7,8 @@ public class Entry {
 
     private Integer wordId;
 
+
+
     public Integer getEntryId() {
         return entryId;
     }

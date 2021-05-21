@@ -9,6 +9,8 @@
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.demo.springboot.translation.common.domain.EntryWithBLOBs">
     <result column="type" jdbcType="LONGVARCHAR" property="type" />
     <result column="marks" jdbcType="LONGVARCHAR" property="marks" />
+    <result column="input" jdbcType="LONGVARCHAR" property="input" />
+    <result column="output" jdbcType="LONGVARCHAR" property="output" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,7 +74,7 @@
     entry_id, collection_id, word_id
   </sql>
   <sql id="Blob_Column_List">
-    type, marks
+    type, marks, input, output
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="com.demo.springboot.translation.common.domain.EntryExample" resultMap="ResultMapWithBLOBs">
     select
@@ -126,7 +128,8 @@
     insert into entry (entry_id, collection_id, word_id, 
       type, marks)
     values (#{entryId,jdbcType=INTEGER}, #{collectionId,jdbcType=INTEGER}, #{wordId,jdbcType=INTEGER}, 
-      #{type,jdbcType=LONGVARCHAR}, #{marks,jdbcType=LONGVARCHAR})
+      #{type,jdbcType=LONGVARCHAR}, #{marks,jdbcType=LONGVARCHAR}, #{input,jdbcType=LONGVARCHAR},
+      #{output,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.demo.springboot.translation.common.domain.EntryWithBLOBs">
     insert into entry
@@ -228,6 +231,12 @@
       </if>
       <if test="marks != null">
         marks = #{marks,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="input != null">
+        input = #{input,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="output != null">
+        output = #{output,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where entry_id = #{entryId,jdbcType=INTEGER}

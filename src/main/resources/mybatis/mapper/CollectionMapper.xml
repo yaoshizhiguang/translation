@@ -3,7 +3,7 @@
 <mapper namespace="com.demo.springboot.translation.mapper.CollectionMapper">
   <resultMap id="BaseResultMap" type="com.demo.springboot.translation.common.domain.Collection">
     <id column="cId" jdbcType="INTEGER" property="cid" />
-    <result column="cUid" jdbcType="INTEGER" property="cuid" />
+    <result column="cUid" jdbcType="VARCHAR" property="cuid" />
     <result column="time" jdbcType="DATE" property="time" />
     <result column="language" jdbcType="INTEGER" property="language" />
   </resultMap>
@@ -128,7 +128,7 @@
     insert into collection (cId, cUid, time, 
       language, origin_text, result_text, 
       cName)
-    values (#{cid,jdbcType=INTEGER}, #{cuid,jdbcType=INTEGER}, #{time,jdbcType=DATE}, 
+    values (#{cid,jdbcType=INTEGER}, #{cuid,jdbcType=VARCHAR}, #{time,jdbcType=DATE},
       #{language,jdbcType=INTEGER}, #{originText,jdbcType=LONGVARCHAR}, #{resultText,jdbcType=LONGVARCHAR}, 
       #{cname,jdbcType=LONGVARCHAR})
   </insert>

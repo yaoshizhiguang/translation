@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.demo.springboot.translation.common.domain.History">
     <id column="hid" jdbcType="INTEGER" property="hid" />
     <result column="uid" jdbcType="INTEGER" property="uid" />
-    <result column="huid" jdbcType="INTEGER" property="huid" />
+    <result column="huid" jdbcType="VARCHAR" property="huid" />
     <result column="time" jdbcType="DATE" property="time" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.demo.springboot.translation.common.domain.HistoryWithBLOBs">
