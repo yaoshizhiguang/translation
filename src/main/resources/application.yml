@@ -1,30 +1,30 @@
 # 数据库连接设置
-        spring:
-        datasource:
-        driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://10.133.135.232:3306/translate?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
-        username: root
-        password: 123456
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/translation?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&serverTimeZone=Asia/shanghai
+    username: root
+    password: miku2000327
 
 
 
-        # 设置全局日期格式,如果设置这个格式,则代码中@DateTimeFormat(pattern = "dd/MM/yyyy") 无效!!
-        mvc:
-        format:
-        date: yyyy-MM-dd
-        server:
-        port: 8585
-        servlet:
-        encoding:
-        charset: utf-8
+  # 设置全局日期格式,如果设置这个格式,则代码中@DateTimeFormat(pattern = "dd/MM/yyyy") 无效!!
+  mvc:
+    format:
+      date: yyyy-MM-dd
+server:
+  port: 8585
+  servlet:
+    encoding:
+      charset: utf-8
 
 
 
-        # Mybatis 配置
-        mybatis:
-        mapper-locations: classpath:/mybatis/mapper/*.xml,classpath:/mybatis/mapper/extend/*.xml
+# Mybatis 配置
+mybatis:
+  mapper-locations: classpath:/mybatis/mapper/*.xml,classpath:/mybatis/mapper/extend/*.xml
 
-        logging:
-        level:
-        com.demo.springboot.helloworld.mapper: debug
+logging:
+  level:
+    com.demo.springboot.helloworld.mapper: debug
 

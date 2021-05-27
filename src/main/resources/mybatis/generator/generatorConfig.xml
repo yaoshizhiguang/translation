@@ -11,9 +11,9 @@
         </commentGenerator>
         <!--覆盖生成XML文件-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.133.135.232:3306/translate?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull"
+                        connectionURL="jdbc:mysql://localhost:3306/translation?useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull"
                         userId="root"
-                        password="123456">
+                        password="miku2000327">
         </jdbcConnection>
 
         <javaTypeResolver>
@@ -37,10 +37,15 @@
 
         <table tableName="collection" domainObjectName="Collection"/>
         <table tableName="cte"        domainObjectName="Cte"/>
+        <table tableName="etc"        domainObjectName="Etc"/>
         <table tableName="history"    domainObjectName="History"/>
         <table tableName="pte"        domainObjectName="Pte"/>
         <table tableName="rte"        domainObjectName="Rte"/>
+        <table tableName="etp"        domainObjectName="Etp"/>
+        <table tableName="etr"        domainObjectName="Etr"/>
         <table tableName="user"       domainObjectName="User"/>
+        <table tableName="entry"       domainObjectName="Entry"/>
+
         <!--<table tableName="Book" domainObjectName="Book"/>-->
 
         <!--  <table schema="DB2ADMIN" tableName="ALLTYPES" domainObjectName="Customer" >
