@@ -4,9 +4,11 @@ import com.demo.springboot.translation.common.domain.User;
 import com.demo.springboot.translation.common.domain.UserExample;
 import com.demo.springboot.translation.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserServiceImp implements UserService{
     @Autowired
     UserMapper userMapper;
@@ -19,7 +21,8 @@ public class UserServiceImp implements UserService{
                 .andPassEqualTo(user.getPass());
         List<User> users = userMapper.selectByExample(ex);
 
-        return users.size() > 0 ? users.get(0) : null;
+        User account = users.size() > 0 ? users.get(0) : null;
+        return account;
     }
 
     @Override

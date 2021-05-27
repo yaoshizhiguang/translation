@@ -7,7 +7,12 @@ public class User {
 
     private String name;
 
+    public User(){}
+
     public User(String uId, String password, String name) {
+        this.uid = uId;
+        this.pass = password;
+        this.name = name;
     }
 
     public String getUid() {

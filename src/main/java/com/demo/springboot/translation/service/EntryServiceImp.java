@@ -5,9 +5,11 @@ import com.demo.springboot.translation.common.domain.EntryExample;
 import com.demo.springboot.translation.common.domain.EntryWithBLOBs;
 import com.demo.springboot.translation.mapper.EntryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EntryServiceImp implements EntryService{
 
     EntryMapper entryMapper;

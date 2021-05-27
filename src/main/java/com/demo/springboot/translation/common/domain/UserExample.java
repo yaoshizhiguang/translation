@@ -174,7 +174,7 @@ public class UserExample {
             return (Criteria) this;
         }
         public UserExample.Criteria andPassEqualTo(String value) {
-            addCriterion("password =", value, "password");
+            addCriterion("pass =", value, "pass");
             return (UserExample.Criteria) this;
         }
     }

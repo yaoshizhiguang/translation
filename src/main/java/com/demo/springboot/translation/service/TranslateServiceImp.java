@@ -3,10 +3,12 @@ package com.demo.springboot.translation.service;
 import com.demo.springboot.translation.common.domain.*;
 import com.demo.springboot.translation.mapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import sun.security.krb5.internal.EncTicketPart;
 
 import java.util.List;
 
+@Service
 public class TranslateServiceImp implements TranslateService{
     @Autowired
     private CteMapper cteMapper;

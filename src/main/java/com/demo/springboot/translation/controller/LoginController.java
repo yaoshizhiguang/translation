@@ -54,7 +54,7 @@ public class LoginController {
         //uName = loginUser.getUserName();
         if(loginUser != null ){
             request.getSession().setAttribute("user",loginUser);
-                return "search_result";
+                return "login";
         }else{
             map.put("msg", "用户名或密码错误");
         }
